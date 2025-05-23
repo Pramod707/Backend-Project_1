@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     },  
     password : {
         type : String,
-        required : true,
+        required : [true, "password is required"],
     },
   
     watchHistory :[
@@ -41,12 +41,13 @@ const userSchema = new mongoose.Schema({
             ref : "video"
         }
     ],
-    
-    createdAt :{
-        type : Date,
-        default : Date.now,
+
+    refreshToken :{
+        type : String,
+
     }
-})
+   
+},{timestamps: true})
 
 
 export const userModel = mongoose.model("user",userSchema);
