@@ -17,5 +17,6 @@ app.use(cookieParser());
 import userRoutes from "./routes/user.router.js"
 
 app.use("/api/v1/user",userRoutes);
+console.log("middle-ware is working")
 
 export default app;
