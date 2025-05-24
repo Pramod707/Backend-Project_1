@@ -3,7 +3,7 @@ const asyncHandler = (reqHandler) => {return (req, res, next) => {
 }
 };
 
-export { asyncHandler };
+export default asyncHandler ;
 
 // const asyncHandler =(fn)=>async(res,req,next)=>{
 //     try {
