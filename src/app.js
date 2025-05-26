@@ -20,3 +20,4 @@ app.use("/api/v1/user",userRoutes);
 console.log("middle-ware is working")
 
 export { app};
+//app is exported
