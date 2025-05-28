@@ -20,6 +20,12 @@ export const userRegister = asyncHandler(async (req, res) => {
 
   const avataarLocalPath = req.files?.avatar?.[0]?.path;
   const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
+  
+     if (!avataarLocalPath) {
+      throw new ApiError(400, "avatar is required");
+      
+     }
+
 });
 
 // controllers/user.controller.js
