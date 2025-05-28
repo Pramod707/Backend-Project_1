@@ -12,7 +12,7 @@ export const userRegister = asyncHandler(async (req,res)=>{
        ) {
             throw new ApiError(400, "All fields are required");
        }
-      });
+
       const ExistedUser = user.findOne({
             $or :[{ email },{user} ]
       })
@@ -21,6 +21,12 @@ export const userRegister = asyncHandler(async (req,res)=>{
             throw new ApiError(409, "User already exists");
       }
 
+      const avataarLocalPath =  req.files?.avatar?.[0]?.path;
+      const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
+      
+
+      });
+     
 
 
 
