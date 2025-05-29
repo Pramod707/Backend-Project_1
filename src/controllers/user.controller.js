@@ -14,6 +14,8 @@ export const userRegister = asyncHandler(async (req, res) => {
     $or: [{ email }, { user }],
   });
 
+
+
   if (ExistedUser) {
     throw new ApiError(409, "User already exists");
   }
