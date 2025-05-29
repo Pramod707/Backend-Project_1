@@ -8,10 +8,12 @@ router.route("/register").post(
    name : "avataar",
 
    maxCount : 1,
-   
+
      },{
   name : coverImage,
+
 maxCount : 1,
+
      }]),
     
     userRegister
