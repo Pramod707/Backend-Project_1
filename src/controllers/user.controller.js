@@ -1,6 +1,7 @@
 import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/APierrHandle.js";
 import user from "../models/user.model.js";
+import { APIresponce } from "../utils/APIresponce.js";
 export const userRegister = asyncHandler(async (req, res) => {
   const { fullName, email, password } = req.body;
   console.log("email:", email);
@@ -40,6 +41,10 @@ export const userRegister = asyncHandler(async (req, res) => {
       if (!userCreated) {
         throw new ApiError(500, "error while creating user");
       }
+      return res.status(201).json(
+
+        new APIresponce(200,"user created successfully",userCreated)
+      )
 });
 
 // controllers/user.controller.js

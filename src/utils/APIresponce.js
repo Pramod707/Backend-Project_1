@@ -8,3 +8,4 @@ class APIresponce extends Error{
 
     }
 }
+export {APIresponce};
