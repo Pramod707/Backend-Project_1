@@ -37,6 +37,9 @@ export const userRegister = asyncHandler(async (req, res) => {
      })
      const userCreated = await user.findById(user._id).select(
       "-password -refreshToken")
+      if (!userCreated) {
+        throw new ApiError(500, "error while creating user");
+      }
 });
 
 // controllers/user.controller.js
