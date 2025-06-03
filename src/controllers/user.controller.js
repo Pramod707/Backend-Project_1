@@ -27,7 +27,16 @@ export const userRegister = asyncHandler(async (req, res) => {
       throw new ApiError(400, "avatar is required");
       
      }
-
+     const user = await user.create({
+      fullName,
+      avatar: avatar.url,
+      coverImage : coverImage.url?.url || "",
+      email,
+      password,
+      username :  username.toLowerCase()
+     })
+     const userCreated = await user.findById(user._id).select(
+      "-password -refreshToken")
 });
 
 // controllers/user.controller.js
